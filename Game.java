@@ -7,6 +7,9 @@ public class Game
     private static int opciones = 0;
     private static Scanner sc;
     private static int preguntas = 10;
+    private static int Puntaje = 0;
+    private static String Nombre ="";
+    
     
 	public static void main(String[] args) {
 	    sc = new Scanner(System.in);
@@ -101,26 +104,26 @@ public class Game
             }
             private static void TeoremadeConjuntos(){
                 do {
-                    switch (numrandom.nextInt()* 10 + 1) {
-                        case 1:
+                   switch (numrandom.nextInt(10)+ 1 ) {
+                        case 1: System.out.println("a");
                             break;
-                        case 2:
+                        case 2: System.out.println("b");
                          break;
-                        case 3 :
+                        case 3 : System.out.println("c");
                         break;
-                        case 4:
+                        case 4: System.out.println("d");
                         break;
-                        case 5:
+                        case 5: System.out.println("f");
                         break;
-                        case 6:
+                        case 6: System.out.println("g");
                         break;
-                        case 7:
+                        case 7: System.out.println("h");
                         break;
-                        case 8:
+                        case 8: System.out.println("i");
                         break;
-                        case 9:
+                        case 9: System.out.println("j");
                         break;
-                        case 10:
+                        case 10: System.out.println("k");
                         break;
 
                 
@@ -131,26 +134,26 @@ public class Game
             }
             private static void FuncionesCOnjuntos(){
                 do{
-                    switch (numrandom.nextInt()*10 + 1) {
-                        case 1:
+                    switch (numrandom.nextInt(10)+ 1 ) {
+                        case 1: System.out.println("a");
                             break;
-                        case 2:
+                        case 2: System.out.println("b");
                          break;
-                        case 3 :
+                        case 3 : System.out.println("c");
                         break;
-                        case 4:
+                        case 4: System.out.println("d");
                         break;
-                        case 5:
+                        case 5: System.out.println("f");
                         break;
-                        case 6:
+                        case 6: System.out.println("g");
                         break;
-                        case 7:
+                        case 7: System.out.println("h");
                         break;
-                        case 8:
+                        case 8: System.out.println("i");
                         break;
-                        case 9:
+                        case 9: System.out.println("j");
                         break;
-                        case 10:
+                        case 10: System.out.println("k");
                         break;
 
                 
@@ -161,26 +164,26 @@ public class Game
                     }
                 private static void Grafos(){
                     do{
-                        switch (numrandom.nextInt()* 10 + 1) {
-                                 case 1:
+                        switch (numrandom.nextInt(10)+ 1 ) {
+                        case 1: System.out.println("a");
                             break;
-                        case 2:
+                        case 2: System.out.println("b");
                          break;
-                        case 3 :
+                        case 3 : System.out.println("c");
                         break;
-                        case 4:
+                        case 4: System.out.println("d");
                         break;
-                        case 5:
+                        case 5: System.out.println("f");
                         break;
-                        case 6:
+                        case 6: System.out.println("g");
                         break;
-                        case 7:
+                        case 7: System.out.println("h");
                         break;
-                        case 8:
+                        case 8: System.out.println("i");
                         break;
-                        case 9:
+                        case 9: System.out.println("j");
                         break;
-                        case 10:
+                        case 10: System.out.println("k");
                         break;
 
                 
@@ -215,5 +218,4 @@ public class Game
     
     
     
-
 
