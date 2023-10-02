@@ -1,6 +1,7 @@
 package Practicas;
 import java.util.Scanner;
 import java.util.Random;
+import java.util.ArrayList;
 public class Game
     {
     private static Random numrandom;
@@ -9,11 +10,14 @@ public class Game
     private static int preguntas = 10;
     private static int Puntaje = 0;
     private static String Nombre ="";
+    private static Boolean Respuesta; 
     
     
 	public static void main(String[] args) {
 	    sc = new Scanner(System.in);
 	    numrandom = new Random();
+        ArrayList<Integer> ListaP = new ArrayList<>();
+        ArrayList<String> ListaN = new ArrayList<>();
 	    MainMenu();
 	    
 	}
@@ -26,22 +30,24 @@ public class Game
 	    switch(opciones){
 	        case 1:
 	            System.out.println("Jugar");
-	             Categorias();
+                opciones = 0;
+                Nombres();
 	            break;
 	        case 2:
-	            System.out.println("Opcines");
+	            System.out.println("Opciones");
                 Opciones();
 	            break;
 	        case 3:
 	            System.out.println("Ayuda");
+                Ayuda();
 	            break;
 	            case 4:
 	                System.out.println("Ranking");
 	                break;
 	           case 0:
-	               System.out.println("Salir");
+                   System.out.println("Fin");
 	        default:
-	            System.out.println("");
+	            System.out.println("Ingresa un valor correcto");
 	            break;
 	    }
 	    
@@ -49,6 +55,7 @@ public class Game
     }
 
 	    private static void Categorias(){
+            opciones = sc.nextInt();
 	        switch (opciones){
 	            case 1:
 	                System.out.println("Conjuntos");
@@ -76,6 +83,7 @@ public class Game
                 do{
                     switch (numrandom.nextInt(10)+ 1 ) {
                         case 1: System.out.println("a");
+                                
                             break;
                         case 2: System.out.println("b");
                          break;
@@ -203,7 +211,15 @@ public class Game
                 private static void Ayuda(){
               System.out.println("El juego se trata de un juego de preguntas, que consta de 10 preguntas de metodos discretos\t Sobre Conjuntos, Teorema de Conjuntos, Funciones y Grafos");
               System.out.println("Apreta 0 para volver");
+              opciones = sc.nextInt();
             
+                }
+                private static void Nombres(){
+                System.out.println("Ingresa tu nombre");
+                Nombre = sc.next();
+                System.out.println("Bienvenido "+Nombre);
+                Categorias();
+        
                 }
         
                 
@@ -218,4 +234,5 @@ public class Game
     
     
     
+
 
