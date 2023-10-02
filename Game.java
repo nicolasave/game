@@ -26,7 +26,7 @@ public class Main
     private static void MainMenu(){
         do{
             System.out.println("-@-@-@-@-@-@-@-@-@-@-@-@-@-@-");
-            System.out.println("-");
+            System.out.println("-                            @");
             System.out.println("-----------------------------@");
             System.out.println("@ 1. Jugar                   @");
             System.out.println("@ 2. Opciones                @");
