@@ -1,17 +1,19 @@
 
+
 import java.util.*;
 
-public class Main
+public class Game
 {
     private static Random numrandom;
     private static int opciones = 0;
-    private  static  int randomComp = 0;
     private static int count = 0;
     private static Scanner sc;
     private static int preguntas = 10;
     private static int Puntaje = 0;
     private static String Nombre ="";
-    private static Boolean Respuesta;
+    private static Boolean TF;
+    private static int Multiple = 0;
+    
 
 
     public static void main(String[] args) {
@@ -19,15 +21,16 @@ public class Main
         numrandom = new Random();
         ArrayList<Integer> ListaP = new ArrayList<>();
         ArrayList<String> ListaN = new ArrayList<>();
-        //Instanciacion de las clases
+        ArrayList<Integer> casos = new ArrayList<>();
+        for (int i = 1; i <=10;i++){
+            casos.add(i);
+        }
         MainMenu();
 
     }
     private static void MainMenu(){
         do{
-            System.out.println("-@-@-@-@-@-@-@-@-@-@-@-@-@-@-");
-            System.out.println("-                            @");
-            System.out.println("-----------------------------@");
+            System.out.println("-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@");
             System.out.println("@ 1. Jugar                   @");
             System.out.println("@ 2. Opciones                @");
             System.out.println("@ 3. Ayuda                   @");
@@ -92,157 +95,31 @@ public class Main
     }
 
     private static void Conjuntos(){
-        preguntas = 0;
-        randomComp = 0;
-        count = 0;
-        Set<Integer> set = new HashSet<>();
-        do{
-            set.clear();
-            for (int i = 0; i < 10; i++) {
-                set.add(i);
-            }
-            randomComp = numrandom.nextInt();
-            switch (randomComp)  {
-                case 1 : System.out.println("a");
-
-                    opciones = sc.nextInt(); // cambiala por la comprobacion
-                    break;
-                case 2: System.out.println("b");
-
-                    count += 1;
-                    opciones = sc.nextInt();
-                    break;
-                case 3 : System.out.println("c");
-                    count += 1;
-                    opciones = sc.nextInt();
-                    break;
-                case 4: System.out.println("d");
-                    opciones = sc.nextInt();
-                    count += 1;
-                    break;
-                case 5: System.out.println("f");
-                    opciones = sc.nextInt();
-                    count += 1;
-                    break;
-                case 6: System.out.println("g");
-                    opciones = sc.nextInt();
-                    count += 1;
-                    break;
-                case 7: System.out.println("h");
-                    opciones = sc.nextInt();
-                    count += 1;
-                    break;
-                case 8: System.out.println("i");
-                    opciones = sc.nextInt();
-
-                    count += 1;
-                    break;
-                case 9: System.out.println("j");
-                    opciones = sc.nextInt();
-                    count += 1;
-                    break;
-                case 10: System.out.println("k");
-                    count += 1;
-                    opciones = sc.nextInt();
-                    break;
-                case 0:
-                    System.out.println("aaaa");
-            }
-        } while(count!=10);
-    }
+    String[] conjuntos = {
+        "Que es un conjunto", "Que es un conjunto finito", "Que es un conjunto Infinito ","Como definimos a un conjunto por extencion?",
+        "Como defininos a un conjunto por comprencion?", "fdsafsd", "sda","fdsafsd", "sda","fdsafsd", "sda","fdsafsd", "sda","fdsafsd"
+        , "sda","fdsafsd", "sda","fdsafsd", "sda","fdsafsd"
+    };
+ }
     private static void TeoremadeConjuntos(){
-        preguntas = 10;
-        do {
-            switch (numrandom.nextInt(0,10)) {
-                case 1: System.out.println("a");
 
-                    break;
-                case 2: System.out.println("b");
-                    break;
-                case 3 : System.out.println("c");
-                    break;
-                case 4: System.out.println("d");
-                    break;
-                case 5: System.out.println("f");
-                    break;
-                case 6: System.out.println("g");
-                    break;
-                case 7: System.out.println("h");
-                    break;
-                case 8: System.out.println("i");
-                    break;
-                case 9: System.out.println("j");
-                    break;
-                case 10: System.out.println("k");
-                    break;
-                default:
-                    System.out.println("ta Todo mal con vo");
-                    break;
-            }
-        }while (preguntas!=0);
+    String[] teoremadeConjuntos =  {
+        "En teorema de conjuntos a que nos referimos al decir Universo ?", "En teorema de conjuntos a que nos referimos al decir interseccion de conjuntos?",
+        "En teorema de conjuntos a que nos referimos al decir Union de conjuntos","fdsafsd", "sda","fdsafsd", "sda","fdsafsd", "sda","fdsafsd", "sda","fdsafsd"
+        , "sda","fdsafsd", "sda","fdsafsd", "sda","fdsafsd"
+
+    };
+        preguntas(randomSort(), teoremadeConjuntos);
     }
     private static void FuncionesCOnjuntos(){
-        preguntas = 10;
-        do{
-            switch (numrandom.nextInt(10)+ 1 ) {
-                case 1: System.out.println("a");
-                    break;
-                case 2: System.out.println("b");
-                    break;
-                case 3 : System.out.println("c");
-                    break;
-                case 4: System.out.println("d");
-                    break;
-                case 5: System.out.println("f");
-                    break;
-                case 6: System.out.println("g");
-                    break;
-                case 7: System.out.println("h");
-                    break;
-                case 8: System.out.println("i");
-                    break;
-                case 9: System.out.println("j");
-                    break;
-                case 10: System.out.println("k");
-                    break;
-                default:System.out.println("ta Todo mal con vo");
-                    break;
-            }
-        }while (preguntas!=0);
+
     }
+       
+            
+    
+    
     private static void Grafos(){
-        preguntas = 10;
-        do{
-            switch (numrandom.nextInt(10)+ 1 ) {
-                case 1:
-                    System.out.println("a"); // pregunta
-                    break;
-                case 2: System.out.println("b");
-                    break;
-                case 3 : System.out.println("c");
-                    break;
-                case 4: System.out.println("d");
-                    break;
-                case 5: System.out.println("f");
-                    break;
-                case 6: System.out.println("g");
-                    break;
-                case 7: System.out.println("h");
-                    break;
-                case 8: System.out.println("i");
-                    break;
-                case 9: System.out.println("j");
-                    break;
-                case 10: System.out.println("k");
-                    break;
-
-
-                default:System.out.println("ta Todo mal con vo");
-                    break;
-            }
-        }while (preguntas!=0);
-
-
+       
     }
 
     
@@ -266,8 +143,70 @@ public class Main
         Categorias();
 
     }
+    private static int[] randomSort(){
+        int[] a = new int[20];
+        for (int i = 0; i < a.length; i++) {
+            a[i] = numrandom.nextInt(20);
+            for (int j = 0; j < i; j++) {
+                if(a[i] == a[j]) {
+                    i--;
+                    break;
 
-}
+
+                }
+            }
+            
+        }
+            return a;
+    }
+    private static void preguntas(int a[],String[] pregunta){
+        int x = 0;
+        for (int i = 0; i < a.length; i++) {
+            x= a[i];
+            switch (x) {
+                case 1:
+                    System.out.println(pregunta[0]);
+                    break;
+                case 2:
+                    System.out.println(pregunta[1]);
+                    break;
+                case 3:
+                    System.out.println(pregunta[2]);
+                    break;
+                case 4:
+                    System.out.println(pregunta[3]);
+                    break;
+                case 5:
+                    System.out.println(pregunta[4]);
+                    break;
+                case 6:
+                    System.out.println(pregunta[5]);
+                    break;
+                case 7:
+                    System.out.println(pregunta[6]);
+                    break;
+                case 8:
+                    System.out.println(pregunta[7]);
+                    break;
+                case 9:
+                    System.out.println(pregunta[8]);
+                    break;
+                case 10:
+                    System.out.println(pregunta[9]);
+                    break;
+
+                default:
+                    break;
+            }
+            
+        }
+    }
+    }
+
+    
+
+
+
 
 
 
