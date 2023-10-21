@@ -1,6 +1,6 @@
 
     import java.util.*;
-    public class game
+    public class gamev2
     {
         private static Random numrandom;
         private static int opciones = 0;
@@ -11,14 +11,16 @@
         private static String Nombre ="";
         private static Boolean TF;
         private static int Multiple = 0;
+        private static ArrayList<Integer> puntaje;
+        private static ArrayList<String> nombres;
         
 
 
         public static void main(String[] args) {
+            puntaje = new ArrayList<>();
+            nombres = new ArrayList<>();
             sc = new Scanner(System.in);
             numrandom = new Random();
-            ArrayList<Integer> ListaP = new ArrayList<>();
-            ArrayList<String> ListaN = new ArrayList<>();
             ArrayList<Integer> casos = new ArrayList<>();
             for (int i = 1; i <=10;i++){
                 casos.add(i);
@@ -34,7 +36,7 @@
                 System.out.println("@ 3. Ayuda                   @");
                 System.out.println("@ 4. Ranking                 @");
                 System.out.println("@ 0. Salir                   @");
-                System.out.println("-@-@-@-@-@-@-@-@-@-@-@-@-@-@-");
+                System.out.println("@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@");
                 opciones = sc.nextInt();
                 switch(opciones){
                     case 1:
@@ -120,34 +122,13 @@
         }
         private static void funcionesdeConjuntosMultiple(){
 
-        String[] teoremadeConjuntos =  {
-            "En teorema de conjuntos a que nos referimos al decir Universo ?", "En teorema de conjuntos a que nos referimos al decir interseccion de conjuntos?",
-            "En teorema de conjuntos a que nos referimos al decir Union de conjuntos","fdsafsd", "sda","fdsafsd", "sda","fdsafsd", "sda","fdsafsd", "sda","fdsafsd"
-            , "sda","fdsafsd", "sda","fdsafsd", "sda","fdsafsd"
-
-        };
-        String[] teoremaDeConjuntosRespuesta = {
-            "","","","","","","","","","","","",""
-        };
-            preguntas(randomSort(), teoremadeConjuntos, teoremaDeConjuntosRespuesta);
         }
         private static void RelacionesMultiple(){
-            String[] funcionesdeConjuntos = { //tienes que emparejar las preguntas correctas con las respuestas correctas si no, no funciona la comprobcion multiple
-                "","","","","","","","","","","","","","","","","","","",""
-            };
-            String[] funcionesdeConjuntosnRespuesta = {
-                "","","","","","","","","","","","",""
-            };
-            preguntas(randomSort(), funcionesdeConjuntos, funcionesdeConjuntosnRespuesta);
+
+            //preguntas(randomSort(), funcionesdeConjuntos, funcionesdeConjuntosnRespuesta);
         }
         private static void GrafosMultiple(){
-            String[] grafos = {
-            "","","","","","","","","","","","","","","","","","","",""
-            };
-            String[] grafosRespuestas = {
-                "","","","","","","","","","","","","","","","","","","",""
-            };
-            preguntas(randomSort(), grafos, grafosRespuestas);
+
         
         }
         private static void Opciones(){
@@ -165,7 +146,10 @@
         private static void Nombres(){
             System.out.println("Ingresa tu nombre");
             Nombre = sc.next();
+
             System.out.println("Bienvenido "+Nombre);
+            nombres.add(Nombre);
+            
             Categorias();
         }
         private static int[] randomSort(int s){
@@ -278,17 +262,20 @@
             if (opciones == respuesta) {
                 System.out.println("+ 1");
                 Puntaje++;
+                
             }
             else{
                 System.out.println("perdiste");
             }
-
+            puntaje.add(Puntaje);
             
         }
         private static void Ranking(){
-            System.out.println(Puntaje);
+            for (int index = 0; index < nombres.size(); index++) {
+                System.out.println("nombre: " + nombres.get(index) + " puntaje: " + puntaje.get(index));
+                
+            }
         }
-
                 
     }
         
